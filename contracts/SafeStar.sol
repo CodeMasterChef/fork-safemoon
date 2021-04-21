@@ -11,7 +11,7 @@
   #BEE
 
   #LIQ+#RFI+#SHIB+#DOGE = #BEE
-  #SAFEMOON features:
+  #SafeStar features:
   3% fee auto add to the liquidity pool to locked forever when selling
   2% fee auto distribute to all holders
   I created a black hole so #Bee token will deflate itself in supply with every transaction
@@ -698,7 +698,7 @@ interface IUniswapV2Router02 is IUniswapV2Router01 {
 }
 
 
-contract SafeMoon is Context, IERC20, Ownable {
+contract SafeStar is Context, IERC20, Ownable {
     using SafeMath for uint256;
     using Address for address;
 
@@ -712,13 +712,13 @@ contract SafeMoon is Context, IERC20, Ownable {
     address[] private _excluded;
 
     uint256 private constant MAX = ~uint256(0);
-    uint256 private _tTotal = 1000000000 * 10**6 * 10**9;
+    uint256 private _tTotal = 1000000000 * 10**18;
     uint256 private _rTotal = (MAX - (MAX % _tTotal));
     uint256 private _tFeeTotal;
 
-    string private _name = "SafeMoon";
-    string private _symbol = "SAFEMOON";
-    uint8 private _decimals = 9;
+    string private _name = "SafeStar";
+    string private _symbol = "SAFESTAR";
+    uint8 private _decimals = 18;
     
     uint256 public _taxFee = 5;
     uint256 private _previousTaxFee = _taxFee;
@@ -900,7 +900,7 @@ contract SafeMoon is Context, IERC20, Ownable {
     function setLiquidityFeePercent(uint256 liquidityFee) external onlyOwner() {
         _liquidityFee = liquidityFee;
     }
-   
+
     function setMaxTxPercent(uint256 maxTxPercent) external onlyOwner() {
         _maxTxAmount = _tTotal.mul(maxTxPercent).div(
             10**2

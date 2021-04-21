@@ -1,4 +1,4 @@
-const SafeMoon = artifacts.require("SafeMoon");
+const SafeStar = artifacts.require("SafeStar");
 module.exports = function (deployer) {
-  deployer.deploy(SafeMoon);
+  deployer.deploy(SafeStar);
 };
